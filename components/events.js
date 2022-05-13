@@ -1,5 +1,4 @@
-import { buttonTree, buttonRain, buttonRoom, buttonFire, buttonPlay, buttonStop, buttonMore, buttonLess} from './elements.js'
-
+import { buttonTree, buttonRain, buttonRoom, buttonFire, buttonPlay, buttonStop, buttonMore, buttonLess, inputTree, inputRain, inputRoom, inputFire} from './elements.js'
 
 export default function Events( {
     timer,
@@ -85,6 +84,30 @@ export default function Events( {
     buttonLess.addEventListener('click', () => {
         timer.less();
         sound.pressButton();
+    })
+
+    inputTree.addEventListener('input', () => {
+        // deixar os valores entre 0 e 1
+        let volume = Number(inputTree.value / 100)
+        sound.volumeTree(volume)
+    })
+
+    inputRain.addEventListener('input', () => {
+        // deixar os valores entre 0 e 1
+        let volume = Number(inputRain.value / 100)
+        sound.volumeRain(volume)
+    })
+
+    inputRoom.addEventListener('input', () => {
+        // deixar os valores entre 0 e 1
+        let volume = Number(inputRoom.value / 100)
+        sound.volumeRoom(volume)
+    })
+
+    inputFire.addEventListener('input', () => {
+        // deixar os valores entre 0 e 1
+        let volume = Number(inputFire.value / 100)
+        sound.volumeFire(volume)
     })
     
 

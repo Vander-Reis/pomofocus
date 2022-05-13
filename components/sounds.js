@@ -7,8 +7,15 @@ export default function Sounds() {
     const buttonPressAudio = new Audio("https://github.com/maykbrito/automatic-video-creator/blob/master/audios/button-press.wav?raw=true")
     const kitchenTimer = new Audio("https://github.com/maykbrito/automatic-video-creator/blob/master/audios/kichen-timer.mp3?raw=true")
 
+
+    rain.loop = true
+    tree.loop = true
+    room.loop = true
+    fire.loop = true
+
     function playRain() {
         rain.play();
+        
     }
 
     function playTree() {
@@ -34,8 +41,31 @@ export default function Sounds() {
         buttonPressAudio.play()
     }
 
-    function finishTimer() {
-        kitchenTimer.play();
+    function timeEnd() {
+        kitchenTimer.play()
+    }
+
+    function volumeTree(value) {
+       
+        tree.volume = value   
+    }
+
+    function volumeRain(value) {
+       
+        rain.volume = value
+        
+    }
+
+    function volumeRoom(value) {
+       
+        room.volume = value
+        
+    }
+
+    function volumeFire(value) {
+       
+        fire.volume = value
+        
     }
 
     return {
@@ -49,7 +79,12 @@ export default function Sounds() {
         playFire,
         pauseMusic,
         pressButton,
-        finishTimer
+        timeEnd,
+        volumeTree,
+        volumeRain,
+        volumeRoom,
+        volumeFire
+        
     }
 
 }

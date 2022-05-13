@@ -8,6 +8,13 @@ const buttonMore = document.querySelector(".more")
 const buttonLess = document.querySelector(".less")
 const minutesDisplay = document.querySelector('.minutes')
 const secondsDisplay = document.querySelector('.seconds')
+const buttonSum = document.querySelector('.sum')
+const buttonMom = document.querySelector('.mom')
+const inputTree = document.querySelector('.sizeTree')
+const inputRain = document.querySelector('.sizeRain')
+const inputRoom = document.querySelector('.sizeRoom')
+const inputFire = document.querySelector('.sizeFire')
+let elementoRoot = document.querySelector('body')
 let timerTimeOut;
 let minutes = Number(minutesDisplay.textContent);
 
@@ -22,6 +29,13 @@ export {
     buttonLess,
     minutesDisplay,
     secondsDisplay,
+    buttonSum,
+    buttonMom,
+    inputTree,
+    inputRain,
+    inputRoom,
+    inputFire,
+    elementoRoot,
     timerTimeOut,
     minutes
 }

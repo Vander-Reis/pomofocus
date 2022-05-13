@@ -1,7 +1,10 @@
+import Sounds from "./sounds.js"
+
+const sound = Sounds()
+
 export default function Timer({
     minutesDisplay,
     secondsDisplay,
-    sound
 }) {
 
     let timerTimeOut
@@ -22,8 +25,9 @@ export default function Timer({
       let isFinished = minutes <= 0 && seconds <= 0
 
       if (isFinished) {
-        sound.finishTimer()
+        
         updateDisplay()
+        sound.timeEnd()
         return;
       }
 

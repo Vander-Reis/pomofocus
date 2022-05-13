@@ -6,17 +6,52 @@
 
 :root {
     font-size: 62.5%;
+    --bg-color: #E1E1E6;
+    --bg-color-light: #02799D;
+    --color-text: #323238;
+    --bg-body: #FFFFFF;
+    --fill-color: #323238;
+    --bg-input: #323238;
 }
+
 
 body {
     width: 32rem;
     margin: 0 auto;
+    background: var(--bg-body);
+ 
 }
 
+.modeDark {
+    --bg-color: #29292E;
+    --bg-color-light: #0A3442;
+    --color-text: white;
+    --bg-body: black;
+    --fill-color: #C4C4CC;
+    --bg-input: white;
+}
 
+.darkMode {
+    text-align: end;
+}
+
+.darkMode button {
+    border: none;
+    background: transparent;
+}
+
+.darkMode img{
+    width: 45px;
+    margin-top: 60px;
+}
+
+.hide {
+    display: none;
+    
+}
 
 main {
-    height: 100vh;
+    height: 80vh;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -40,7 +75,7 @@ main {
     justify-content: center;
     gap: 0;
     margin-bottom: 1.7rem;
-    color: #323238;;
+    color: var(--color-text);
 }
 
 .controls{
@@ -68,14 +103,18 @@ main {
 
 .sounds button {
     border: none;
-    background: #E1E1E6;
+    background: var(--bg-color);
     width: 9.8rem;
     height: 10.2rem;
     border-radius: 2.4rem;
 }
 
-.sounds .select {
-    background: #02799D;
+.sounds .select + input, .sounds .select {
+    background: var(--bg-color-light);
+}
+
+svg path {
+    fill: var(--fill-color);
 }
 
 .select svg path{
@@ -85,6 +124,47 @@ main {
 button {
     cursor: pointer;
 }
+
+.card {
+    position: relative;
+}
+
+input {
+    width: 6rem;
+    height: 1.6rem;
+
+    -webkit-appearance: none;
+
+    background: var(--bg-color);
+
+    position: absolute;
+    left: 20px;
+    bottom: 5px;
+    
+}
+
+input[type='range']::-webkit-slider-runnable-track{
+    background: var(--bg-input);
+    width: 9rem;
+    height: .4rem;
+    border-radius: .5rem;
+}
+
+input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    width: 1.6rem; 
+    height: 1.6rem;
+    margin-top: -.5rem;
+    background: var(--bg-input);
+    border-radius: 50%
+
+}
+
+.select + input[type='range']::-webkit-slider-runnable-track, .select + input[type='range']::-webkit-slider-thumb{
+    background: white;
+}
+
 
 
 
@@ -114,4 +194,12 @@ button {
         width: 13.8rem;
         height: 15.2rem;
     }
+
+    input {
+        width: 9rem;
+        left: 25px;
+        bottom: 16px;
+    }
+
+
 }
