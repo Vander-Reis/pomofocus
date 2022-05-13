@@ -7,11 +7,17 @@ export default function Sounds() {
     const buttonPressAudio = new Audio("https://github.com/maykbrito/automatic-video-creator/blob/master/audios/button-press.wav?raw=true")
     const kitchenTimer = new Audio("https://github.com/maykbrito/automatic-video-creator/blob/master/audios/kichen-timer.mp3?raw=true")
 
-
+    // Colocando todos em loop
     rain.loop = true
     tree.loop = true
     room.loop = true
     fire.loop = true
+
+    // Definindo o volume para 50%
+    rain.volume = 0.5
+    tree.volume = 0.5
+    room.volume = 0.5
+    fire.volume = 0.5
 
     function playRain() {
         rain.play();
